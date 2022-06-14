@@ -32,8 +32,6 @@ public class Timer : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         float milliseconds = timeToDisplay % 1 * 1000;
 
-        
-
         if (timerValue <= 10 && timerValue>= 3) {
             timeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
             timeText.color = Color.yellow;
