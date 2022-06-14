@@ -11,6 +11,6 @@ public class ChangingScene : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        Debug.Log("Application ending...");
+        Debug.Log("Exit Game");
     }
 }

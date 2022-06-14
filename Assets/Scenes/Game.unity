@@ -319,7 +319,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1859226779}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -448,7 +448,7 @@ Transform:
   m_LocalScale: {x: 129.6516, y: 129.65161, z: 129.65161}
   m_Children: []
   m_Father: {fileID: 1859226779}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &411220568
 GameObject:
@@ -466,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &411220569
 Transform:
   m_ObjectHideFlags: 0
@@ -479,7 +479,7 @@ Transform:
   m_LocalScale: {x: 129.65161, y: 129.65161, z: 129.65161}
   m_Children: []
   m_Father: {fileID: 1859226779}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &411220570
 SpriteRenderer:
@@ -955,7 +955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &907514290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,7 @@ Transform:
   m_LocalScale: {x: 129.65161, y: 129.65161, z: 129.65161}
   m_Children: []
   m_Father: {fileID: 1859226779}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043372092
 GameObject:
@@ -1202,6 +1202,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1225732511}
         m_TargetAssemblyTypeName: PlayerNavigation, Assembly-CSharp
+        m_MethodName: changeLocation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1225732513}
+        m_TargetAssemblyTypeName: NPCNavigation, Assembly-CSharp
         m_MethodName: changeLocation
         m_Mode: 3
         m_Arguments:
@@ -1456,6 +1468,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1225732510}
   - component: {fileID: 1225732511}
+  - component: {fileID: 1225732513}
+  - component: {fileID: 1225732512}
   m_Layer: 0
   m_Name: train
   m_TagString: Untagged
@@ -1501,7 +1515,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360c5152bf15438469fbc025892b4ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1225732512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225732509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb09fb37f0d3374982630946393f51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   roomSprites: []
+--- !u!114 &1225732513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225732509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5b52c18932f124081dec72f8549aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1254102385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,8 +1550,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1254102387}
   - component: {fileID: 1254102386}
+  - component: {fileID: 1254102388}
+  - component: {fileID: 1254102390}
   m_Layer: 0
-  m_Name: tmpTicket
+  m_Name: ticket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,12 +1618,50 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254102385}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1529.889, y: 51.860645, z: -11668.645}
+  m_LocalPosition: {x: -2000, y: 0, z: -1.1}
   m_LocalScale: {x: 129.65161, y: 129.65161, z: 129.65161}
   m_Children: []
   m_Father: {fileID: 1859226779}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1254102388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254102385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bc670314dae0c45ab1cb91a1aaeb82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1254102390
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254102385}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.2, y: 3.2}
+    newSize: {x: 7.2, y: 6.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.2, y: 3.2}
+  m_EdgeRadius: 0
 --- !u!1 &1351493416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1853,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1225732513}
+        m_TargetAssemblyTypeName: NPCNavigation, Assembly-CSharp
+        m_MethodName: changeLocation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1444107446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1897,7 @@ RectTransform:
   m_Children:
   - {fileID: 480704032}
   m_Father: {fileID: 1859226779}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -2087,6 +2177,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1225732513}
+        m_TargetAssemblyTypeName: NPCNavigation, Assembly-CSharp
+        m_MethodName: changeLocation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1755678020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,7 +2300,7 @@ RectTransform:
   m_Children:
   - {fileID: 723379408}
   m_Father: {fileID: 1859226779}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -2380,13 +2482,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1254102387}
+  - {fileID: 372768206}
   - {fileID: 238173151}
   - {fileID: 1444107447}
   - {fileID: 1806106306}
-  - {fileID: 372768206}
   - {fileID: 907514291}
   - {fileID: 411220569}
-  - {fileID: 1254102387}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2528,7 +2630,7 @@ GameObject:
   - component: {fileID: 1892284358}
   m_Layer: 0
   m_Name: Isotropic Camera
-  m_TagString: MainCamera
+  m_TagString: SecondCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2781,6 +2883,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1225732513}
+        m_TargetAssemblyTypeName: NPCNavigation, Assembly-CSharp
+        m_MethodName: changeLocation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2009244471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +3076,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1225732511}
         m_TargetAssemblyTypeName: PlayerNavigation, Assembly-CSharp
+        m_MethodName: changeLocation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1225732513}
+        m_TargetAssemblyTypeName: NPCNavigation, Assembly-CSharp
         m_MethodName: changeLocation
         m_Mode: 3
         m_Arguments:

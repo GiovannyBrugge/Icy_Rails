@@ -6,7 +6,6 @@ public class Timer : MonoBehaviour
     private float timerValue = 20;
     public Text timeText;
 
-    //Update is called once per frame
     void Update()
     {
         if (timerValue > 0)

@@ -5,37 +5,31 @@ using UnityEngine.UI;
 
 public class PlayerNavigation : MonoBehaviour
 {
-    public SpriteRenderer[] roomSprites;
+    private Room room;
     private GameObject playerLocation;
   
 
     private void Start()
     {
-        setRoom();
+        room = GameObject.Find("train").GetComponent<Room>();
         changeLocation(0);
     }
-
-    private void setRoom()
-    {
-        GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
-        roomSprites = new SpriteRenderer[rooms.Length];
-        Debug.Log(rooms.Length);
-        for (int i = 0; i < rooms.Length; i++)
-        {   
-            roomSprites[i] = rooms[i].GetComponent<SpriteRenderer>();
-        }
-    }
-
+    
     private void defaultRooms()
     {   
        
         for (int i = 0; i < 5; i++)
         {
             //roomSprites[0].sprite = (texturename);      When art received replace this!!!
-            roomSprites[i].color = Color.black;
+            room.roomSprites[i].color = Color.black;
         }
     }
-
+    private void setStatenment(int index, Vector3 pos)
+    {
+        playerLocation.transform.localPosition = pos;
+        room.roomSprites[index].color = Color.white;
+        Debug.Log(playerLocation.transform.localPosition);
+    } 
     public void changeLocation(int currentLocation)
     {
         defaultRooms();
@@ -44,35 +38,23 @@ public class PlayerNavigation : MonoBehaviour
         switch (currentLocation){
 
             case 0:
-                playerLocation.transform.localPosition = new Vector3(16,0,-1);
-                roomSprites[0].color = Color.white;
-                Debug.Log(playerLocation.transform.localPosition);
+                setStatenment(0, new Vector3(16, 0, -1));
                 break;
 
             case 1:
-                playerLocation.transform.localPosition = new Vector3(8, 0, -1);
-                roomSprites[1].color = Color.white;
-                Debug.Log(playerLocation.transform.localPosition);
+                setStatenment(1, new Vector3(8, 0, -1));
                 break;
             case 2:
-                playerLocation.transform.localPosition = new Vector3(0, 0, -1);
-                roomSprites[2].color = Color.white;
-                Debug.Log(playerLocation.transform.localPosition);
+                setStatenment(2, new Vector3(0, 0, -1));
                 break;
 
             case 3:
-                playerLocation.transform.localPosition = new Vector3(-8, 0, -1);
-                roomSprites[3].color = Color.white;
-                Debug.Log(playerLocation.transform.localPosition);
+                setStatenment(3, new Vector3(-8, 0, -1));
                 break;
 
             case 4:
-                playerLocation.transform.localPosition = new Vector3(-16, 0, -1);
-                roomSprites[4].color = Color.white;
-                Debug.Log(playerLocation.transform.localPosition);
+                setStatenment(4, new Vector3(-16, 0, -1));
                 break;
-
-
         }
     }
 }
