@@ -18,7 +18,7 @@ public class NPCNavigation : MonoBehaviour
     {
         npcLocation.transform.localPosition = npos;
         travellerTicket.transform.localPosition = tpos;
-        Debug.Log(npcLocation.transform.localPosition);
+        Debug.Log("NPC Location: " + npcLocation.transform.localPosition);
     }
     public void ChangeLocation(int currentLocation)
     {

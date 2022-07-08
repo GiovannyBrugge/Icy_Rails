@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Dragging : MonoBehaviour
 {
-    private bool isDragging;
+    /*//private bool isDragging;
     public void OnMouseDown()
     {
-        isDragging = true;
+        //isDragging = true;
     }
     public void OnMouseUp()
     {
-        isDragging = false;
-    }
+        //isDragging = false;
+    }*/
     public void OnMouseDrag()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

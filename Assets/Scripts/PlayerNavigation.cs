@@ -4,10 +4,11 @@ public class PlayerNavigation : MonoBehaviour
 {
     private Room room;
     private GameObject playerLocation;
-  
-
+    public Sprite roofSprite;
+    public Sprite trainSprite;
     private void Start()
     {
+        
         room = GameObject.Find("train").GetComponent<Room>();
         ChangeLocation(0);
     }
@@ -17,15 +18,16 @@ public class PlayerNavigation : MonoBehaviour
        
         for (int i = 0; i < 5; i++)
         {
-            //roomSprites[0].sprite = (texturename);      When art received replace this!!!
-            room.roomSprites[i].color = Color.black;
+            room.roomSprites[i].sprite = roofSprite;
+            //room.roomSprites[i].color = Color.black;
         }
     }
     private void SetState(int index, Vector3 pos)
     {
         playerLocation.transform.localPosition = pos;
-        room.roomSprites[index].color = Color.white;
-        Debug.Log(playerLocation.transform.localPosition);
+        room.roomSprites[index].sprite = trainSprite;
+        //room.roomSprites[index].color = Color.white;
+        Debug.Log("Player position: " + playerLocation.transform.localPosition);
     } 
     public void ChangeLocation(int currentLocation)
     {
