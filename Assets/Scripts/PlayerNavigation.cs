@@ -10,6 +10,7 @@ public class PlayerNavigation : MonoBehaviour
     {
         
         room = GameObject.Find("train").GetComponent<Room>();
+        room.SetRoom();
         ChangeLocation(0);
     }
     

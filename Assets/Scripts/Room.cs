@@ -6,12 +6,7 @@ public class Room : MonoBehaviour
 {
     public SpriteRenderer[] roomSprites;
     
-    void Start()
-    {
-        SetRoom();
-    }
-
-    private void SetRoom()
+    public void SetRoom()
     {
         GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
         roomSprites = new SpriteRenderer[rooms.Length];
