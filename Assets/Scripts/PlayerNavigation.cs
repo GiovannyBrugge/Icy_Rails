@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerNavigation : MonoBehaviour
 {
@@ -12,10 +9,10 @@ public class PlayerNavigation : MonoBehaviour
     private void Start()
     {
         room = GameObject.Find("train").GetComponent<Room>();
-        changeLocation(0);
+        ChangeLocation(0);
     }
     
-    private void defaultRooms()
+    private void DefaultRooms()
     {   
        
         for (int i = 0; i < 5; i++)
@@ -24,36 +21,36 @@ public class PlayerNavigation : MonoBehaviour
             room.roomSprites[i].color = Color.black;
         }
     }
-    private void setStatenment(int index, Vector3 pos)
+    private void SetState(int index, Vector3 pos)
     {
         playerLocation.transform.localPosition = pos;
         room.roomSprites[index].color = Color.white;
         Debug.Log(playerLocation.transform.localPosition);
     } 
-    public void changeLocation(int currentLocation)
+    public void ChangeLocation(int currentLocation)
     {
-        defaultRooms();
+        DefaultRooms();
         playerLocation = GameObject.Find("conductor");
         
         switch (currentLocation){
 
             case 0:
-                setStatenment(0, new Vector3(16, 0, -1));
+                SetState(0, new Vector3(16, 0, -1));
                 break;
 
             case 1:
-                setStatenment(1, new Vector3(8, 0, -1));
+                SetState(1, new Vector3(8, 0, -1));
                 break;
             case 2:
-                setStatenment(2, new Vector3(0, 0, -1));
+                SetState(2, new Vector3(0, 0, -1));
                 break;
 
             case 3:
-                setStatenment(3, new Vector3(-8, 0, -1));
+                SetState(3, new Vector3(-8, 0, -1));
                 break;
 
             case 4:
-                setStatenment(4, new Vector3(-16, 0, -1));
+                SetState(4, new Vector3(-16, 0, -1));
                 break;
         }
     }
