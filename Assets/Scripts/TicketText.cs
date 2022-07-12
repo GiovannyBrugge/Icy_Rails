@@ -7,6 +7,7 @@ public class TicketText : MonoBehaviour
 
     private void Start()
     {
-        ticketTimeText.text = "12:00";
+        ;
+       //ticketTimeText.text = "12:00";
     }
 }
